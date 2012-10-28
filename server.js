@@ -1,5 +1,5 @@
-var express = require('express');
-   // prayers = require('./routes/prayers');
+var express = require('express'),
+    prayers = require('./routes/prayers');
 
 var app = express();
 
@@ -12,7 +12,7 @@ app.get('/', function (req, res) {
 	res.writeHead(200, {'Content-Type': 'text/html'});
   	res.end('Hello from Heroku!');
 });
-//app.get('/prayers', prayers.findAll);
+app.get('/prayers', prayers.findAll);
 //app.get('/prayers/:id', prayers.findByIndex);
 //app.post('/prayers', prayers.addPrayer);
 //app.put('/prayers/:id', prayers.updatePrayer);

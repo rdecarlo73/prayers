@@ -16,6 +16,9 @@ else{
     }
 }
 var generate_mongo_url = function(obj){
+	if(process.env.MONGOLAB_URI){
+		return process.env.MONGOLAB_URI;
+	}
     obj.hostname = (obj.hostname || 'localhost');
     obj.port = (obj.port || 27017);
     obj.db = (obj.db || 'prayersdb');
