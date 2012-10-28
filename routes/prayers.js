@@ -20,8 +20,10 @@ var generate_mongo_url = function(obj){
 		return process.env.MONGOLAB_URI;
 	}
 	if(process.env.MONGOLAB_URI){
+		console.log(process.env.MONGOLAB_URI);
 		return process.env.MONGOLAB_URI;
 	}
+	console.log('generating mongourl');
     obj.hostname = (obj.hostname || 'localhost');
     obj.port = (obj.port || 27017);
     obj.db = (obj.db || 'prayersdb');
