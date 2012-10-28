@@ -3,7 +3,7 @@ var BSON = require('mongodb').BSONPure;
 
 if(process.env.VCAP_SERVICES){
     var env = JSON.parse(process.env.VCAP_SERVICES);
-    var mongo = env['mongodb-1.8'][0]['credentials'];
+    //var mongo = env['mongodb-1.8'][0]['credentials'];
 }
 else{
     var mongo = {
@@ -19,11 +19,7 @@ var generate_mongo_url = function(obj){
 	if(process.env.MONGOLAB_URI){
 		return process.env.MONGOLAB_URI;
 	}
-	if(process.env.MONGOLAB_URI){
-		console.log(process.env.MONGOLAB_URI);
-		return process.env.MONGOLAB_URI;
-	}
-	console.log('generating mongourl');
+	console.log('generating mongourl...');
     obj.hostname = (obj.hostname || 'localhost');
     obj.port = (obj.port || 27017);
     obj.db = (obj.db || 'prayersdb');
@@ -35,6 +31,7 @@ var generate_mongo_url = function(obj){
     }
 }
 var mongourl = generate_mongo_url(mongo);
+console.log(mongourl);
 
 mongodb.connect(mongourl, function(err, db) {
 	console.log("Connected to 'prayersdb' database");
