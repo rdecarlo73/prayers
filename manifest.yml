@@ -1,0 +1,17 @@
+--- 
+applications: 
+  .: 
+    instances: 1
+    infra: aws
+    url: ${name}.${target-base}
+    framework: 
+      info: 
+        exec: 
+        mem: 64M
+        description: Node.js Application
+      name: node
+    mem: 64M
+    services: 
+      mongodb-dc47: 
+        type: mongodb
+    name: test2
