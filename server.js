@@ -13,7 +13,7 @@ app.get('/', function (req, res) {
   	res.end('Hello from Heroku!');
 });
 app.get('/prayers', prayers.findAll);
-//app.get('/prayers/:id', prayers.findByIndex);
+app.get('/prayers/:id', prayers.findByIndex);
 //app.post('/prayers', prayers.addPrayer);
 //app.put('/prayers/:id', prayers.updatePrayer);
 //app.delete('/prayers/:id', prayers.deletePrayer);
