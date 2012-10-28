@@ -18,5 +18,5 @@ app.get('/prayers/:id', prayers.findByIndex);
 //app.put('/prayers/:id', prayers.updatePrayer);
 //app.delete('/prayers/:id', prayers.deletePrayer);
 
-app.listen(PORT);
-console.log('Listening on port ' + PORT + '...');
+app.listen(process.env.PORT);
+console.log('Listening on port ' + process.env.PORT + '...');
