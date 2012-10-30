@@ -19,6 +19,9 @@ var generate_mongo_url = function(obj){
 	if(process.env.MONGOLAB_URI){
 		return process.env.MONGOLAB_URI;
 	}
+	if(process.env.MONGOHQ_URI){
+		return process.env.MONGOHQ_URI;
+	}
 	console.log('generating mongourl...');
     obj.hostname = (obj.hostname || 'localhost');
     obj.port = (obj.port || 27017);
@@ -30,7 +33,7 @@ var generate_mongo_url = function(obj){
         return "mongodb://" + obj.hostname + ":" + obj.port + "/" + obj.db;
     }
 }
-var mongourl = generate_mongo_url(mongo);
+var mongourl = generate_mongo_url(mongo)
 console.log(mongourl);
 
 mongodb.connect(mongourl, function(err, db) {

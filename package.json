@@ -1,8 +1,16 @@
 {
- "name":"prayers",
+ "name": "prayers",
  "description": "Random Catholic Prayers Application",
-  "version":"0.0.1",
-  "dependencies":{
-      "express":"3.x"
-  }
+ "version": "0.0.1-3",
+ "dependencies": {
+  "express": "3.x",
+  "mongodb": "1.1.x"
+ },
+ "subdomain": "rdecarlo73.prayers",
+ "scripts": {
+  "start": "server.js"
+ },
+ "engines": {
+  "node": "0.8.x"
+ }
 }
